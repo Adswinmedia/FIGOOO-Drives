@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIGOOO Drives - Premium Car Rental & Chauffeur Service in Ranchi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #2563eb 50%, #3b82f6 75%, #60a5fa 100%);
+        }
+        
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(-10px) rotate(-1deg); }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        
+        .service-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
+            border-color: #2563eb;
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .nav-blur {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+        }
+        
+        .pricing-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.15);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fafbff 100%);
+            border-left: 4px solid #2563eb;
+        }
+        
+        .cta-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+        }
+        
+        .input-focus {
+            transition: all 0.3s ease;
+        }
+        
+        .input-focus:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+        }
+        
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #2563eb, #10b981);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 9999;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-sm" id="navbar">
+        <div class="container-custom">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <!-- Custom FIGOOO Logo -->
+                        <svg class="w-14 h-14" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FIGOOO Drives Logo - Premium Car Rental Service in Ranchi">
+                            <!-- Background Circle with Gradient -->
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="carGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Main Circle -->
+                            <circle cx="50" cy="50" r="48" fill="url(#logoGradient)" stroke="#ffffff" stroke-width="2"/>
+                            
+                            <!-- Stylized Car Icon -->
+                            <g transform="translate(20, 30)">
+                                <!-- Car Body -->
+                                <path d="M5 20 L55 20 L55 35 L5 35 Z" fill="url(#carGradient)" rx="3"/>
+                                <path d="M10 15 L15 10 L45 10 L50 15 L50 20 L10 20 Z" fill="url(#carGradient)" rx="2"/>
+                                
+                                <!-- Windows -->
+                                <path d="M15 12 L20 8 L40 8 L45 12 L45 18 L15 18 Z" fill="#ffffff" opacity="0.9" rx="1"/>
+                                
+                                <!-- Wheels -->
+                                <circle cx="15" cy="35" r="6" fill="#1f2937"/>
+                                <circle cx="15" cy="35" r="4" fill="#374151"/>
+                                <circle cx="45" cy="35" r="6" fill="#1f2937"/>
+                                <circle cx="45" cy="35" r="4" fill="#374151"/>
+                                
+                                <!-- Wheel Centers -->
+                                <circle cx="15" cy="35" r="2" fill="#6b7280"/>
+                                <circle cx="45" cy="35" r="2" fill="#6b7280"/>
+                                
+                                <!-- Headlight -->
+                                <circle cx="52" cy="25" r="2" fill="#fef3c7"/>
+                            </g>
+                            
+                            <!-- Speed Lines -->
+                            <g opacity="0.6">
+                                <line x1="75" y1="35" x2="85" y2="35" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="77" y1="45" x2="85" y2="45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="79" y1="55" x2="85" y2="55" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">FIGOOO</h1>
+                        <p class="text-sm text-gray-600 font-medium -mt-1">Premium Drives</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group">
+                        Services
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group">
+                        Why Us
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#booking" class="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group">
+                        Book Now
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group">
+                        Contact
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="tel:8539821366" class="btn-primary text-white px-6 py-3 rounded-full font-semibold flex items-center space-x-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <span>Call Now</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed top-20 right-0 w-80 h-full bg-white shadow-2xl lg:hidden">
+            <div class="p-8 space-y-6">
+                <a href="#home" class="block text-gray-800 hover:text-blue-600 font-medium text-lg transition-colors" onclick="toggleMobileMenu()">Home</a>
+                <a href="#services" class="block text-gray-800 hover:text-blue-600 font-medium text-lg transition-colors" onclick="toggleMobileMenu()">Services</a>
+                <a href="#features" class="block text-gray-800 hover:text-blue-600 font-medium text-lg transition-colors" onclick="toggleMobileMenu()">Why Us</a>
+                <a href="#booking" class="block text-gray-800 hover:text-blue-600 font-medium text-lg transition-colors" onclick="toggleMobileMenu()">Book Now</a>
+                <a href="#contact" class="block text-gray-800 hover:text-blue-600 font-medium text-lg transition-colors" onclick="toggleMobileMenu()">Contact</a>
+                <a href="tel:8539821366" class="block btn-primary text-white px-6 py-4 rounded-2xl font-semibold text-center">
+                    📞 Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="home" class="hero-gradient min-h-full flex items-center pt-20">
+            <div class="container-custom py-24 lg:py-32">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Left Content -->
+                    <div class="space-y-8">
+                        <div class="fade-in-up">
+                            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 leading-tight text-center lg:text-left">
+                                FIGOOO Drives - Premium Car Rental Ranchi
+                            </h1>
+                            
+                            <p class="text-xl text-white/90 mb-10 leading-relaxed max-w-lg">
+                                Experience premium car rental and chauffeur services in Ranchi, Jharkhand with professional drivers, pristine vehicles, and unmatched reliability for airport transfers, outstation trips, and corporate travel.
+                            </p>
+                        </div>
+                        
+                        <div class="fade-in-up stagger-1 flex flex-col sm:flex-row gap-6">
+                            <a href="tel:8539821366" class="btn-primary text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center space-x-3 group">
+                                <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                                <span>Call: 8539821366</span>
+                            </a>
+                            <a href="https://wa.me/918539821366" target="_blank" rel="noopener noreferrer" class="btn-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center space-x-3 group">
+                                <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                                </svg>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                        
+                        <div class="fade-in-up stagger-2 grid grid-cols-3 gap-8 pt-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-amber-400 mb-2">500+</div>
+                                <div class="text-white/80 text-sm">Happy Customers</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-amber-400 mb-2">24/7</div>
+                                <div class="text-white/80 text-sm">Available</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-amber-400 mb-2">5★</div>
+                                <div class="text-white/80 text-sm">Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Content - Enhanced Booking Form -->
+                    <div class="fade-in-up stagger-3 relative">
+                        <div class="glass-morphism rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                            <!-- Background Pattern -->
+                            <div class="absolute inset-0 opacity-5">
+                                <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #7c3aed 0%, transparent 50%), radial-gradient(circle at 75% 75%, #f59e0b 0%, transparent 50%);"></div>
+                            </div>
+                            
+                            <div class="relative z-10">
+                                <div class="text-center mb-8">
+                                    <h3 class="text-3xl font-bold text-white mb-3">Book Your Premium Ride</h3>
+                                    <p class="text-white/80">Instant quote & confirmation in seconds</p>
+                                </div>
+                                
+                                <form id="bookingForm" class="space-y-6">
+                                    <div class="grid grid-cols-1 gap-6">
+                                        <div>
+                                            <label for="fullName" class="block text-sm font-semibold text-white mb-3">Full Name *</label>
+                                            <input type="text" id="fullName" name="fullName" required class="input-focus w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all" placeholder="Enter your full name">
+                                        </div>
+                                        
+                                        <div>
+                                            <label for="phone" class="block text-sm font-semibold text-white mb-3">Phone Number *</label>
+                                            <input type="tel" id="phone" name="phone" required class="input-focus w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-white/60 focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all" placeholder="Enter your phone number">
+                                        </div>
+                                        
+                                        <div>
+                                            <label for="serviceType" class="block text-sm font-semibold text-white mb-3">Service Type *</label>
+                                            <select id="serviceType" name="serviceType" required class="input-focus w-full px-6 py-4 bg-white/10 border border-white/20 rounded-2xl text-white focus:ring-2 focus:ring-amber-400 focus:border-transparent transition-all">
+                                                <option value="" class="text-gray-900">Select service</option>
+                                                <option value="local" class="text-gray-900">Local Ride</option>
+                                                <option value="airport" class="text-gray-900">Airport Transfer</option>
+                                                <option value="outstation" class="text-gray-900">Outstation Trip</option>
+                                                <option value="hourly" class="text-gray-900">Hourly Rental</option>
+                                                <option value="corporate" class="text-gray-900">Corporate Travel</option>
+                                                <option value="event" class="text-gray-900">Special Event</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" class="w-full btn-primary text-white py-5 px-8 rounded-2xl font-bold text-lg flex items-center justify-center space-x-3 group">
+                                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                        </svg>
+                                        <span>Get Instant Quote</span>
+                                    </button>
+                                    
+                                    <div class="text-center pt-4">
+                                        <p class="text-white/60 text-sm mb-2">Or call directly:</p>
+                                        <a href="tel:8539821366" class="text-2xl font-bold text-amber-400 hover:text-amber-300 transition-colors">8539821366</a>
+                                    </div>
+                                </form>
+                                
+                                <!-- Success Message -->
+                                <div id="successMessage" class="hidden text-center py-8">
+                                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-4">Booking Request Received!</h3>
+                                    <p class="text-white/80 mb-6">We'll call you within 5 minutes to confirm your ride details and provide the final quote.</p>
+                                    <button onclick="resetForm()" class="btn-secondary text-white px-8 py-3 rounded-2xl font-semibold">
+                                        Book Another Ride
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-6 -right-6 bg-gradient-to-r from-green-400 to-green-500 text-white rounded-2xl px-6 py-3 text-sm font-bold shadow-xl floating">
+                            ✓ Instant Confirmation
+                        </div>
+                        
+                        <div class="absolute -bottom-6 -left-6 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-2xl px-6 py-3 text-sm font-bold shadow-xl floating" style="animation-delay: -2s;">
+                            ⭐ 500+ Happy Customers
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding bg-gray-50">
+            <div class="container-custom">
+                <div class="text-center mb-20">
+                    <div class="inline-flex items-center bg-purple-100 text-purple-600 rounded-full px-6 py-2 text-sm font-semibold mb-6">
+                        Our Premium Services
+                    </div>
+                    <h2 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Best Car Rental Services in Ranchi - <span class="text-gradient">Every Journey Perfectly Crafted</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        From daily commutes to special occasions, FIGOOO Drives provides tailored car rental and chauffeur services in Ranchi, Jharkhand that exceed expectations with professional drivers and premium vehicles
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Cards with Enhanced Design -->
+                    <div class="service-card card-hover rounded-3xl p-8 group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Premium Car Rentals in Ranchi</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Luxury hatchbacks, sedans, and SUVs for Ranchi city and outstation travel across Jharkhand with flexible rental options and professional maintenance.</p>
+                        <div class="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
+                            <span>Explore Options</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card card-hover rounded-3xl p-8 group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Professional Chauffeurs</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Experienced, well-trained drivers for business meetings, events, and personal transportation with impeccable service standards.</p>
+                        <div class="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
+                            <span>Meet Our Team</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card card-hover rounded-3xl p-8 group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Birsa Munda Airport Transfers Ranchi</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Reliable pickup and drop service to Birsa Munda Airport Ranchi with flight tracking, punctual service, and meet & greet options. Best airport taxi service in Ranchi.</p>
+                        <div class="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
+                            <span>Book Transfer</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card card-hover rounded-3xl p-8 group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Corporate Solutions</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Comprehensive corporate transportation solutions for meetings, conferences, employee transport, and business events.</p>
+                        <div class="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
+                            <span>Corporate Plans</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card card-hover rounded-3xl p-8 group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Outstation Journeys</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Comfortable long-distance travel packages with experienced drivers, competitive pricing, and complete travel support.</p>
+                        <div class="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
+                            <span>Plan Journey</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card card-hover rounded-3xl p-8 group">
+                        <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l2.09 6.26L20 9.27l-5 4.87 1.18 6.88L12 17.77l-4.18 3.25L9 14.14 4 9.27l5.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Special Events</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Wedding transportation, party rides, and special occasion services with luxury vehicle options and personalized attention.</p>
+                        <div class="flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
+                            <span>Event Packages</span>
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section-padding bg-white">
+            <div class="container-custom">
+                <div class="text-center mb-20">
+                    <div class="inline-flex items-center bg-amber-100 text-amber-600 rounded-full px-6 py-2 text-sm font-semibold mb-6">
+                        Why Choose FIGOOO
+                    </div>
+                    <h2 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Excellence in Every <span class="text-gradient">Detail</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        We're committed to delivering exceptional experiences through meticulous attention to quality, safety, and customer satisfaction
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-card bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 text-center group card-hover">
+                        <div class="feature-icon w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Premium Fleet</h3>
+                        <p class="text-gray-600 leading-relaxed">Meticulously maintained vehicles with regular servicing, thorough sanitization, and premium amenities for your comfort and safety.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gradient-to-br from-green-50 to-emerald-100 rounded-3xl p-8 text-center group card-hover">
+                        <div class="feature-icon w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Always Punctual</h3>
+                        <p class="text-gray-600 leading-relaxed">Real-time tracking, proactive communication, and strategic route planning ensure you never miss an important appointment.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gradient-to-br from-purple-50 to-violet-100 rounded-3xl p-8 text-center group card-hover">
+                        <div class="feature-icon w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Expert Chauffeurs</h3>
+                        <p class="text-gray-600 leading-relaxed">Licensed, background-verified professionals with extensive local knowledge, excellent driving records, and commitment to service excellence.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gradient-to-br from-orange-50 to-amber-100 rounded-3xl p-8 text-center group card-hover">
+                        <div class="feature-icon w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Transparent Pricing</h3>
+                        <p class="text-gray-600 leading-relaxed">Clear, upfront pricing with detailed breakdowns, no hidden charges, and competitive rates for all our premium services.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gradient-to-br from-pink-50 to-rose-100 rounded-3xl p-8 text-center group card-hover">
+                        <div class="feature-icon w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V7h10v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Easy Booking</h3>
+                        <p class="text-gray-600 leading-relaxed">Streamlined booking process via phone or WhatsApp with instant confirmation, flexible scheduling, and personalized service options.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gradient-to-br from-teal-50 to-cyan-100 rounded-3xl p-8 text-center group card-hover">
+                        <div class="feature-icon w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Safety First</h3>
+                        <p class="text-gray-600 leading-relaxed">Comprehensive insurance coverage, GPS tracking, emergency support, and 24/7 customer assistance for complete peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section-padding bg-gray-50">
+            <div class="container-custom">
+                <div class="text-center mb-20">
+                    <div class="inline-flex items-center bg-green-100 text-green-600 rounded-full px-6 py-2 text-sm font-semibold mb-6">
+                        Customer Stories
+                    </div>
+                    <h2 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Trusted by <span class="text-gradient">Thousands</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Real experiences from satisfied customers who chose FIGOOO for their transportation needs
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="testimonial-card rounded-3xl p-8 shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="flex text-amber-400 text-lg">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">"Outstanding service! The driver was incredibly professional, the car was spotless, and they were right on time for my airport transfer. FIGOOO has set a new standard for transportation in Ranchi."</p>
+                        <div class="flex items-center">
+                            <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                R
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-gray-900 text-lg">Rajesh Kumar</h4>
+                                <p class="text-gray-500">Business Executive</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card rounded-3xl p-8 shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="flex text-amber-400 text-lg">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">"Booked for our family trip to Jamshedpur. The driver was courteous, knew all the best routes, and made our journey comfortable. Fair pricing with complete transparency. Highly recommended!"</p>
+                        <div class="flex items-center">
+                            <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                P
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-gray-900 text-lg">Priya Sharma</h4>
+                                <p class="text-gray-500">Software Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card rounded-3xl p-8 shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="flex text-amber-400 text-lg">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed italic">"We use FIGOOO for all our corporate meetings. They understand business needs perfectly - always reliable, professional drivers, and immaculate vehicles. They're our go-to transportation partner."</p>
+                        <div class="flex items-center">
+                            <div class="w-14 h-14 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                                A
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-bold text-gray-900 text-lg">Amit Singh</h4>
+                                <p class="text-gray-500">Marketing Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="section-padding bg-white">
+            <div class="container-custom">
+                <div class="text-center mb-20">
+                    <div class="inline-flex items-center bg-blue-100 text-blue-600 rounded-full px-6 py-2 text-sm font-semibold mb-6">
+                        Transparent Pricing
+                    </div>
+                    <h2 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Fair & <span class="text-gradient">Transparent</span> Rates
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        No hidden charges, clear rates for all services with premium quality guaranteed
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="pricing-card rounded-3xl p-8 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Local Rides</h3>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">₹12/km</div>
+                        <p class="text-gray-600 mb-6">Within Ranchi city limits</p>
+                        <ul class="text-sm text-gray-500 space-y-2 text-left">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Minimum ₹150</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> AC included</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Professional driver</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Clean vehicle</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-card rounded-3xl p-8 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Airport Transfer</h3>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">₹800</div>
+                        <p class="text-gray-600 mb-6">To/From Birsa Munda Airport</p>
+                        <ul class="text-sm text-gray-500 space-y-2 text-left">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Fixed rate</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Flight tracking</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Meet & greet</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Luggage assistance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-card rounded-3xl p-8 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Outstation</h3>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">₹15/km</div>
+                        <p class="text-gray-600 mb-6">Beyond city limits</p>
+                        <ul class="text-sm text-gray-500 space-y-2 text-left">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Driver allowance included</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Fuel included</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Toll extra</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Multi-day packages</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-card rounded-3xl p-8 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Hourly Rental</h3>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">₹200/hr</div>
+                        <p class="text-gray-600 mb-6">Minimum 4 hours</p>
+                        <ul class="text-sm text-gray-500 space-y-2 text-left">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 40km included per hour</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Extra km ₹12</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Perfect for meetings</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Flexible timing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-16">
+                    <p class="text-gray-500 mb-8 text-lg">*Prices may vary based on vehicle type and peak hours</p>
+                    <a href="tel:8539821366" class="btn-primary text-white px-10 py-4 rounded-2xl font-bold text-lg inline-flex items-center space-x-3">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <span>Get Custom Quote</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="section-padding bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
+            <div class="container-custom">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Left Content -->
+                    <div class="text-white space-y-8">
+                        <div>
+                            <div class="inline-flex items-center bg-white/20 text-white rounded-full px-6 py-2 text-sm font-semibold mb-6">
+                                Book Your Ride
+                            </div>
+                            <h2 class="text-4xl lg:text-6xl font-bold mb-6">
+                                Your Premium Journey <span class="text-amber-300">Starts Here</span>
+                            </h2>
+                            <p class="text-xl text-white/90 leading-relaxed mb-8">
+                                Experience luxury transportation with FIGOOO Drives. Professional chauffeurs, pristine vehicles, and unmatched reliability for every journey in Ranchi and beyond.
+                            </p>
+                        </div>
+                        
+                        <!-- Key Benefits -->
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold">Instant Confirmation</h4>
+                                    <p class="text-white/80">Get immediate booking confirmation and driver details</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold">24/7 Availability</h4>
+                                    <p class="text-white/80">Round-the-clock service for all your travel needs</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold">Safe & Secure</h4>
+                                    <p class="text-white/80">Verified drivers, GPS tracking, and comprehensive insurance</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Options -->
+                        <div class="pt-8 border-t border-white/20">
+                            <p class="text-white/80 mb-6 text-lg">Prefer to book over the phone?</p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="tel:8539821366" class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center space-x-3 hover:bg-white/30 transition-all">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                    </svg>
+                                    <span>Call: 8539821366</span>
+                                </a>
+                                <a href="https://wa.me/918539821366" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center space-x-3 hover:bg-green-600 transition-all">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                                    </svg>
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Content - Booking Form -->
+                    <div class="relative">
+                        <div class="bg-white rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                            <!-- Background Pattern -->
+                            <div class="absolute inset-0 opacity-5">
+                                <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #7c3aed 0%, transparent 50%), radial-gradient(circle at 75% 75%, #f59e0b 0%, transparent 50%);"></div>
+                            </div>
+                            
+                            <div class="relative z-10">
+                                <div class="text-center mb-8">
+                                    <h3 class="text-3xl font-bold text-gray-900 mb-3">Book Your Ride Now</h3>
+                                    <p class="text-gray-600">Fill out the form below and we'll get back to you instantly</p>
+                                </div>
+                                
+                                <form id="mainBookingForm" class="space-y-6">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="mainFullName" class="block text-sm font-semibold text-gray-700 mb-3">Full Name *</label>
+                                            <input type="text" id="mainFullName" name="fullName" required class="input-focus w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" placeholder="Enter your full name">
+                                        </div>
+                                        
+                                        <div>
+                                            <label for="mainPhone" class="block text-sm font-semibold text-gray-700 mb-3">Phone Number *</label>
+                                            <input type="tel" id="mainPhone" name="phone" required class="input-focus w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" placeholder="Enter your phone number">
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="mainServiceType" class="block text-sm font-semibold text-gray-700 mb-3">Service Type *</label>
+                                        <select id="mainServiceType" name="serviceType" required class="input-focus w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all">
+                                            <option value="">Select service type</option>
+                                            <option value="local">Local Ride (Within Ranchi)</option>
+                                            <option value="airport">Airport Transfer</option>
+                                            <option value="outstation">Outstation Trip</option>
+                                            <option value="hourly">Hourly Rental</option>
+                                            <option value="corporate">Corporate Travel</option>
+                                            <option value="event">Special Event</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="mainPickupLocation" class="block text-sm font-semibold text-gray-700 mb-3">Pickup Location</label>
+                                            <input type="text" id="mainPickupLocation" name="pickupLocation" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" placeholder="Enter pickup address">
+                                        </div>
+                                        
+                                        <div>
+                                            <label for="mainDropLocation" class="block text-sm font-semibold text-gray-700 mb-3">Drop Location</label>
+                                            <input type="text" id="mainDropLocation" name="dropLocation" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" placeholder="Enter destination">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="mainPickupDate" class="block text-sm font-semibold text-gray-700 mb-3">Pickup Date</label>
+                                            <input type="date" id="mainPickupDate" name="pickupDate" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all">
+                                        </div>
+                                        
+                                        <div>
+                                            <label for="mainPickupTime" class="block text-sm font-semibold text-gray-700 mb-3">Pickup Time</label>
+                                            <input type="time" id="mainPickupTime" name="pickupTime" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all">
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="mainSpecialRequests" class="block text-sm font-semibold text-gray-700 mb-3">Special Requests (Optional)</label>
+                                        <textarea id="mainSpecialRequests" name="specialRequests" rows="3" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none" placeholder="Any special requirements or preferences..."></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-8 rounded-xl font-bold text-lg flex items-center justify-center space-x-3 hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 group">
+                                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                        </svg>
+                                        <span>Book My Ride Now</span>
+                                    </button>
+                                </form>
+                                
+                                <!-- Success Message -->
+                                <div id="mainSuccessMessage" class="hidden text-center py-8">
+                                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Booking Request Received!</h3>
+                                    <p class="text-gray-600 mb-6">We'll call you within 5 minutes to confirm your ride details and provide the final quote.</p>
+                                    <button onclick="resetMainForm()" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all">
+                                        Book Another Ride
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Trust Indicators -->
+                        <div class="absolute -top-4 -right-4 bg-gradient-to-r from-green-400 to-green-500 text-white rounded-xl px-4 py-2 text-sm font-bold shadow-lg floating">
+                            ✓ 500+ Happy Customers
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -left-4 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-xl px-4 py-2 text-sm font-bold shadow-lg floating" style="animation-delay: -2s;">
+                            ⭐ 5-Star Rated Service
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section-padding cta-gradient">
+            <div class="container-custom">
+                <div class="text-center">
+                    <h2 class="text-4xl lg:text-6xl font-bold text-white mb-8">
+                        Ready for Your Next Journey?
+                    </h2>
+                    <p class="text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+                        Experience the difference with FIGOOO Drives. Book now and discover why we're Ranchi's most trusted transportation service.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <a href="tel:8539821366" class="btn-primary text-white px-10 py-5 rounded-2xl font-bold text-xl flex items-center space-x-3 group">
+                            <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <span>Call: 8539821366</span>
+                        </a>
+                        <a href="https://wa.me/918539821366" target="_blank" rel="noopener noreferrer" class="btn-secondary text-white px-10 py-5 rounded-2xl font-bold text-xl flex items-center space-x-3 group">
+                            <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                            <span>WhatsApp Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-gray-50">
+            <div class="container-custom">
+                <div class="text-center mb-20">
+                    <div class="inline-flex items-center bg-purple-100 text-purple-600 rounded-full px-6 py-2 text-sm font-semibold mb-6">
+                        Get In Touch
+                    </div>
+                    <h2 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Let's Start Your <span class="text-gradient">Journey</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Ready to experience premium transportation? Contact us for instant booking and personalized service
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Contact Info -->
+                    <div class="space-y-10">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Visit Our Office</h3>
+                                <p class="text-gray-600 text-lg leading-relaxed">23, East Jail Road, near Zoca Dine & Bar<br>P.S Lalpur, Ranchi, Jharkhand 834001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Call Us Anytime</h3>
+                                <p class="text-gray-600 mb-3 text-lg">Available 24/7 for bookings and support</p>
+                                <a href="tel:8539821366" class="text-3xl font-bold text-purple-600 hover:text-purple-700 transition-colors">8539821366</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-3">Email Us</h3>
+                                <p class="text-gray-600 mb-3 text-lg">For inquiries and feedback</p>
+                                <a href="mailto:info@figooodrives.com" class="text-xl font-semibold text-purple-600 hover:text-purple-700 transition-colors">info@figooodrives.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced CTA Card -->
+                    <div class="bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 rounded-3xl p-10 text-white relative overflow-hidden">
+                        <!-- Background Pattern -->
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #ffffff 0%, transparent 50%), radial-gradient(circle at 75% 75%, #ffffff 0%, transparent 50%);"></div>
+                        </div>
+                        
+                        <div class="relative z-10">
+                            <h3 class="text-4xl font-bold mb-8">Book Your Premium Ride!</h3>
+                            <p class="text-xl mb-10 opacity-90 leading-relaxed">
+                                Experience luxury transportation with professional service, competitive rates, and unmatched reliability.
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <a href="tel:8539821366" class="block w-full bg-white text-purple-600 py-5 px-8 rounded-2xl font-bold text-lg text-center hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center space-x-3">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                    </svg>
+                                    <span>Call Now: 8539821366</span>
+                                </a>
+                                
+                                <a href="https://wa.me/918539821366" target="_blank" rel="noopener noreferrer" class="block w-full bg-green-500 text-white py-5 px-8 rounded-2xl font-bold text-lg text-center hover:bg-green-600 transition-all transform hover:scale-105 flex items-center justify-center space-x-3">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                                    </svg>
+                                    <span>WhatsApp: 8539821366</span>
+                                </a>
+                            </div>
+                            
+                            <div class="mt-10 pt-8 border-t border-white/20">
+                                <p class="text-sm opacity-75 mb-6">Follow us for updates and exclusive offers:</p>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all transform hover:scale-110">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all transform hover:scale-110">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all transform hover:scale-110">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-gray-900 text-white py-20">
+        <div class="container-custom">
+            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <!-- Footer Logo -->
+                        <svg class="w-16 h-16" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background Circle with Gradient -->
+                            <defs>
+                                <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="footerCarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Main Circle -->
+                            <circle cx="50" cy="50" r="48" fill="url(#footerLogoGradient)" stroke="#ffffff" stroke-width="2"/>
+                            
+                            <!-- Stylized Car Icon -->
+                            <g transform="translate(20, 30)">
+                                <!-- Car Body -->
+                                <path d="M5 20 L55 20 L55 35 L5 35 Z" fill="url(#footerCarGradient)" rx="3"/>
+                                <path d="M10 15 L15 10 L45 10 L50 15 L50 20 L10 20 Z" fill="url(#footerCarGradient)" rx="2"/>
+                                
+                                <!-- Windows -->
+                                <path d="M15 12 L20 8 L40 8 L45 12 L45 18 L15 18 Z" fill="#ffffff" opacity="0.9" rx="1"/>
+                                
+                                <!-- Wheels -->
+                                <circle cx="15" cy="35" r="6" fill="#1f2937"/>
+                                <circle cx="15" cy="35" r="4" fill="#374151"/>
+                                <circle cx="45" cy="35" r="6" fill="#1f2937"/>
+                                <circle cx="45" cy="35" r="4" fill="#374151"/>
+                                
+                                <!-- Wheel Centers -->
+                                <circle cx="15" cy="35" r="2" fill="#6b7280"/>
+                                <circle cx="45" cy="35" r="2" fill="#6b7280"/>
+                                
+                                <!-- Headlight -->
+                                <circle cx="52" cy="25" r="2" fill="#fef3c7"/>
+                            </g>
+                            
+                            <!-- Speed Lines -->
+                            <g opacity="0.6">
+                                <line x1="75" y1="35" x2="85" y2="35" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="77" y1="45" x2="85" y2="45" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="79" y1="55" x2="85" y2="55" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                            </g>
+                        </svg>
+                        <div>
+                            <h3 class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">FIGOOO Drives</h3>
+                            <p class="text-gray-400 font-medium">Premium Transportation Solutions</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-400 leading-relaxed text-lg max-w-lg">
+                        Ranchi's premier car rental and chauffeur service, providing safe, reliable, and luxurious transportation solutions for all your travel needs across Jharkhand and beyond.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-white font-medium">23, East Jail Road, near Zoca Dine & Bar</p>
+                                <p class="text-gray-400">Lalpur, Ranchi, Jharkhand 834001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="tel:8539821366" class="text-white hover:text-purple-400 transition-colors font-semibold text-lg">8539821366</a>
+                                <p class="text-gray-400 text-sm">Available 24/7</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <a href="mailto:info@figooodrives.com" class="text-white hover:text-purple-400 transition-colors">info@figooodrives.com</a>
+                                <p class="text-gray-400 text-sm">Business inquiries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-8">Our Services</h4>
+                    <div class="space-y-4">
+                        <a href="#services" class="block text-gray-400 hover:text-white transition-colors">Premium Car Rentals</a>
+                        <a href="#services" class="block text-gray-400 hover:text-white transition-colors">Airport Transfers</a>
+                        <a href="#services" class="block text-gray-400 hover:text-white transition-colors">Outstation Trips</a>
+                        <a href="#services" class="block text-gray-400 hover:text-white transition-colors">Corporate Travel</a>
+                        <a href="#services" class="block text-gray-400 hover:text-white transition-colors">Chauffeur Services</a>
+                        <a href="#services" class="block text-gray-400 hover:text-white transition-colors">Special Events</a>
+                        <a href="#services" class="block text-gray-400 hover:text-white transition-colors">Hourly Rentals</a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-8">Quick Links</h4>
+                    <div class="space-y-4">
+                        <a href="#home" class="block text-gray-400 hover:text-white transition-colors">Home</a>
+                        <a href="#services" class="block text-gray-400 hover:text-white transition-colors">Services</a>
+                        <a href="#features" class="block text-gray-400 hover:text-white transition-colors">Why Choose Us</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-white transition-colors">Contact Us</a>
+                        <a href="tel:8539821366" class="block text-gray-400 hover:text-white transition-colors">Book Now</a>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h5 class="text-lg font-semibold text-white mb-4">Follow Us</h5>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/918539821366" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-gray-400">
+                        © 2024 FIGOOO Drives. All rights reserved. | Premium Car Rental & Chauffeur Service in Ranchi, Jharkhand
+                    </div>
+                    <div class="flex items-center space-x-6 text-gray-400">
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="hover:text-white transition-colors">Refund Policy</a>
+                    </div>
+                </div>
+                
+                <!-- Developer Credit -->
+                <div class="border-t border-gray-800 mt-8 pt-6">
+                    <div class="text-center">
+                        <p class="text-gray-500 text-sm">
+                            Design and development by 
+                            <a href="https://digitalrajesh.co.in/" target="_blank" rel="noopener noreferrer" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors">Digital Rajesh</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('open');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                const menu = document.getElementById('mobileMenu');
+                menu.classList.remove('open');
+            });
+        });
+        
+        // Enhanced Navigation Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            }
+            
+            // Update scroll progress indicator
+            const scrollProgress = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.transform = `scaleX(${scrollProgress / 100})`;
+        });
+        
+        // Booking Form Functionality (Hero Section)
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const bookingData = {
+                fullName: formData.get('fullName'),
+                phone: formData.get('phone'),
+                serviceType: formData.get('serviceType')
+            };
+            
+            // Simulate form submission
+            console.log('Hero Booking Data:', bookingData);
+            
+            // Show success message with animation
+            const form = document.getElementById('bookingForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            form.style.transform = 'translateY(-20px)';
+            form.style.opacity = '0';
+            
+            setTimeout(() => {
+                form.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                successMessage.style.transform = 'translateY(20px)';
+                successMessage.style.opacity = '0';
+                
+                setTimeout(() => {
+                    successMessage.style.transform = 'translateY(0)';
+                    successMessage.style.opacity = '1';
+                }, 100);
+            }, 300);
+        });
+        
+        // Main Booking Form Functionality
+        document.getElementById('mainBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const bookingData = {
+                fullName: formData.get('fullName'),
+                phone: formData.get('phone'),
+                serviceType: formData.get('serviceType'),
+                pickupLocation: formData.get('pickupLocation'),
+                dropLocation: formData.get('dropLocation'),
+                pickupDate: formData.get('pickupDate'),
+                pickupTime: formData.get('pickupTime'),
+                specialRequests: formData.get('specialRequests')
+            };
+            
+            // Simulate form submission
+            console.log('Main Booking Data:', bookingData);
+            
+            // Show success message with animation
+            const form = document.getElementById('mainBookingForm');
+            const successMessage = document.getElementById('mainSuccessMessage');
+            
+            form.style.transform = 'translateY(-20px)';
+            form.style.opacity = '0';
+            
+            setTimeout(() => {
+                form.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                successMessage.style.transform = 'translateY(20px)';
+                successMessage.style.opacity = '0';
+                
+                setTimeout(() => {
+                    successMessage.style.transform = 'translateY(0)';
+                    successMessage.style.opacity = '1';
+                }, 100);
+            }, 300);
+        });
+        
+        // Reset form functions
+        function resetForm() {
+            const form = document.getElementById('bookingForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            successMessage.style.transform = 'translateY(-20px)';
+            successMessage.style.opacity = '0';
+            
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+                form.classList.remove('hidden');
+                form.style.transform = 'translateY(0)';
+                form.style.opacity = '1';
+                form.reset();
+            }, 300);
+        }
+        
+        function resetMainForm() {
+            const form = document.getElementById('mainBookingForm');
+            const successMessage = document.getElementById('mainSuccessMessage');
+            
+            successMessage.style.transform = 'translateY(-20px)';
+            successMessage.style.opacity = '0';
+            
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+                form.classList.remove('hidden');
+                form.style.transform = 'translateY(0)';
+                form.style.opacity = '1';
+                form.reset();
+            }, 300);
+        }
+        
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            const pickupDateField = document.getElementById('pickupDate');
+            const mainPickupDateField = document.getElementById('mainPickupDate');
+            
+            if (pickupDateField) {
+                pickupDateField.setAttribute('min', today);
+            }
+            if (mainPickupDateField) {
+                mainPickupDateField.setAttribute('min', today);
+            }
+            
+            // Add fade-in animation to elements when they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for animation
+            document.querySelectorAll('.service-card, .feature-card, .testimonial-card, .pricing-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Enhanced hover effects for service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'992e859185bf28cd',t:'MTc2MTE5NDA2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
